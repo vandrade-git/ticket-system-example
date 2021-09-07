@@ -1,0 +1,60 @@
+@font-face {
+    font-family: 'Roboto Regular';
+    src: url('fonts/Roboto/Roboto-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Roboto Thin';
+    src: url('fonts/Roboto/Roboto-Thin.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Market Regular';
+    src: url('fonts/market-regular.ttf') format('truetype');
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    min-height: 100%;
+    background-color: #e8e8e8;
+    display: grid;
+    grid-template-rows: 100vh auto auto;
+    position: relative;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    justify-items: center;
+    align-items: center;
+}
+
+.center-column {
+    grid-column: 1;
+    grid-row: 3;
+}
+
+.error-code {
+    font-family: 'Roboto Thin', sans-serif;
+    font-size: 128px;
+    color: #374459;
+    margin: 0;
+    text-align: center;
+}
+
+.error-description {
+    font-family: 'Roboto Thin', sans-serif;
+    font-size: 42px;
+    color: #374459;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.link {
+    text-decoration: none;
+    color: #e2282b;
+}

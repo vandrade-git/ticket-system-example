@@ -1,0 +1,61 @@
+spring:
+  profiles:
+    active: development
+
+  application:
+    name: support-system
+
+  output:
+    ansi:
+      enabled: always
+
+  datasource:
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+
+  jooq:
+    sql-dialect: postgres
+
+  main:
+    allow-bean-definition-overriding: true
+
+server:
+  port: 8080
+  servlet:
+    session:
+      persistent: true
+      cookie:
+        name: support-system-id-session
+
+security:
+  oauth2:
+    client:
+      accessTokenUri: http://localhost:8089/auth/oauth/token
+      userAuthorizationUri: http://localhost:8089/auth/oauth/authorize
+      clientId: client
+      clientSecret: secret
+    resource:
+      userInfoUri: http://localhost:8089/auth/user/me
+
+logging:
+  path: logs
+  file: support-system
+  level:
+    org.jooq.tools: debug
+
+---
+
+spring:
+  profiles: development
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/db
+
+---
+
+spring:
+  profiles: test
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/test_db
